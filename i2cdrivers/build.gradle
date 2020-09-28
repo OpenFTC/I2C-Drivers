@@ -7,11 +7,11 @@ ext {
 }
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 28
 
     defaultConfig {
         minSdkVersion 23
-        targetSdkVersion 23
+        targetSdkVersion 28
         versionCode 1
         versionName "0.1"
     }
@@ -35,6 +35,7 @@ android {
 dependencies {
     //compileOnly fileTree(include: ['*.aar'], dir: '../libs')
     compileOnly 'org.openftc:robotcore-stock:5.1'
+    implementation 'com.android.support:support-compat:28.0.0'
 }
 
 apply from: '../release-aar.gradle'
