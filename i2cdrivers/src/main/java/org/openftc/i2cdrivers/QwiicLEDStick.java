@@ -1,7 +1,7 @@
 package org.openftc.i2cdrivers;
 
 import android.graphics.Color;
-import android.support.annotation.ColorInt;
+import androidx.annotation.ColorInt;
 
 import com.qualcomm.robotcore.hardware.I2cAddr;
 import com.qualcomm.robotcore.hardware.I2cDeviceSynchDevice;
@@ -11,8 +11,8 @@ import com.qualcomm.robotcore.hardware.configuration.annotations.DevicePropertie
 import com.qualcomm.robotcore.hardware.configuration.annotations.I2cDeviceType;
 
 @I2cDeviceType()
-@DeviceProperties(name = "QWIIC LED Strip", description = "Sparkfun QWIIC LED Strip", xmlTag = "QWIIC_LED_STRIP")
-public class QwiicLEDStrip extends I2cDeviceSynchDevice<I2cDeviceSynchSimple> {
+@DeviceProperties(name = "QWIIC LED Stick", description = "Sparkfun QWIIC LED Stick", xmlTag = "QWIIC_LED_STICK")
+public class QwiicLEDStick extends I2cDeviceSynchDevice<I2cDeviceSynchSimple> {
 
     private enum Commands {
         CHANGE_LED_LENGTH(0x70),
@@ -180,7 +180,7 @@ public class QwiicLEDStrip extends I2cDeviceSynchDevice<I2cDeviceSynchSimple> {
 
     private final static I2cAddr ADDRESS_I2C_DEFAULT = I2cAddr.create7bit(0x23);
 
-    public QwiicLEDStrip(I2cDeviceSynchSimple deviceClient) {
+    public QwiicLEDStick(I2cDeviceSynchSimple deviceClient) {
         super(deviceClient, true);
 
         this.deviceClient.setI2cAddress(ADDRESS_I2C_DEFAULT);
