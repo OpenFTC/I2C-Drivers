@@ -3,7 +3,12 @@ apply plugin: 'com.android.library'
 ext {
     PUBLISH_GROUP_ID = 'org.openftc'
     PUBLISH_ARTIFACT_ID = 'i2cdrivers'
-    PUBLISH_VERSION = '0.1'
+    PUBLISH_VERSION = '1.0.0'
+
+    PUBLISH_DESC = 'OpenFTC I2C Drivers Library'
+    PUBLISH_URL = 'https://github.com/OpenFTC/I2C-Drivers'
+    PUBLISH_VCS_URL = 'https://github.com/OpenFTC/I2C-Drivers/tree/master'
+    PUBLISH_VCS_CONNECTION = 'scm:git:github.com/OpenFTC/I2C-Drivers.git'
 }
 
 android {
@@ -34,8 +39,8 @@ android {
 
 dependencies {
     //compileOnly fileTree(include: ['*.aar'], dir: '../libs')
-    compileOnly 'org.openftc:robotcore-stock:5.1'
+    compileOnly 'org.firstinspires.ftc:RobotCore:7.0.0'
     compileOnly 'androidx.appcompat:appcompat:1.2.0'
 }
 
-apply from: '../release-aar.gradle'
+apply from: '../sonatype-publish.gradle'
