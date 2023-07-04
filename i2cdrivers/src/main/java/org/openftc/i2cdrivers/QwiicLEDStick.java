@@ -180,8 +180,8 @@ public class QwiicLEDStick extends I2cDeviceSynchDevice<I2cDeviceSynchSimple> {
 
     private final static I2cAddr ADDRESS_I2C_DEFAULT = I2cAddr.create7bit(0x23);
 
-    public QwiicLEDStick(I2cDeviceSynchSimple deviceClient) {
-        super(deviceClient, true);
+    public QwiicLEDStick(I2cDeviceSynchSimple deviceClient, boolean deviceClientIsOwned) {
+        super(deviceClient, deviceClientIsOwned);
 
         this.deviceClient.setI2cAddress(ADDRESS_I2C_DEFAULT);
         super.registerArmingStateCallback(false);
